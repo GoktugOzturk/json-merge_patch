@@ -15,12 +15,10 @@ on:
 
 jobs:
   test:
-
     runs-on: ubuntu-latest
     strategy:
       matrix:
         ruby-version: ['2.6', '2.7', '3.0']
-
     steps:
     - uses: actions/checkout@v2
     - name: Set up Ruby
@@ -33,9 +31,18 @@ jobs:
     - name: Coveralls GitHub Action
       # You may pin to the exact commit or the version.
       # uses: coverallsapp/github-action@8cbef1dea373ebce56de0a14c68d6267baa10b44
-      uses: coverallsapp/github-action@v1.1.2
+      uses: coverallsapp/github-action@master
       with:
         github-token: ${{ secrets.github_token }}
         flag-name: ruby-${{ matrix.ruby }}
         parallel: true
         
+  finish:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+    - name: Coveralls Finished
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.github_token }}
+        parallel-finished: true
