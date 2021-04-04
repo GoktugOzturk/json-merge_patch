@@ -1,13 +1,29 @@
 # frozen_string_literal: true
 
+require 'coveralls_reborn'
 require 'simplecov'
+require 'simplecov-lcov'
+
 SimpleCov.start do
   add_filter do |source_file|
     source_file.filename =~ /test/
   end
+  
+  if ENV['CI'] == 'true'
+    SimpleCov::Formatter::LcovFormatter.config do |config|
+      config.report_with_single_file = true
+      config.single_report_path = 'coverage/lcov.info'
+    end
+
+    SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
+      SimpleCov::Formatter::LcovFormatter,
+      Coveralls::SimpleCov::Formatter
+    ])
+  else
+    SimpleCov.formatter = SimpleCov::Formatter::HTMLFormatter
+  end
 end
 
-require 'coveralls'
 Coveralls.wear!
 
 require 'minitest/autorun'
