@@ -24,8 +24,6 @@ SimpleCov.start do
   end
 end
 
-Coveralls.wear!
-
 require 'minitest/autorun'
 
 def pending
