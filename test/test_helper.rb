@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'coveralls_reborn'
+require 'coveralls'
 require 'simplecov'
 require 'simplecov-lcov'
 
