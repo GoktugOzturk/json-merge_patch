@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        ruby-version: ['2.4', '2.5', '2.6', '2.7', '3.0']
+        ruby-version: ['2.6', '2.7', '3.0']
 
     steps:
     - uses: actions/checkout@v2
@@ -36,7 +36,7 @@ jobs:
       uses: coverallsapp/github-action@v1.1.2
       with:
         github-token: ${{ secrets.COVERALLS_TOKEN }}
-        path-to-lcov: ${{ github.workspace }}/coverage/lcov.info
+        path-to-lcov: "./coverage/lcov.info"
         flag-name: ruby-${{ matrix.ruby }}
         parallel: true
         
