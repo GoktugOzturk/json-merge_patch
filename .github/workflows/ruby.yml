@@ -36,6 +36,7 @@ jobs:
       uses: coverallsapp/github-action@v1.1.2
       with:
         github-token: ${{ secrets.COVERALLS_TOKEN }}
+        path-to-lcov: ${{ github.workspace }}/coverage/lcov.info
         flag-name: ruby-${{ matrix.ruby }}
         parallel: true
         
