@@ -2,6 +2,8 @@
 
 [![Master](https://github.com/socio-labs/json-merge_patch/actions/workflows/ruby.yml/badge.svg?branch=master)](https://github.com/socio-labs/json-merge_patch/actions/workflows/ruby.yml) [![Code Climate](https://codeclimate.com/github/steveklabnik/json-merge_patch.png)](https://codeclimate.com/github/steveklabnik/json-merge_patch) [![Coverage Status](https://coveralls.io/repos/github/socio-labs/json-merge_patch/badge.svg?branch=master)](https://coveralls.io/github/socio-labs/json-merge_patch?branch=master)
 
+We've [created a PR](https://github.com/steveklabnik/json-merge_patch/pull/13) on the original repo and it's waiting for more than 1 year. :( Hopefully it will be merged someday so we can archive this repo for good.
+
 This gem augments Ruby's built-in JSON library to support merging JSON blobs
 in accordance with the [draft-snell-merge-patch
 draft](http://tools.ietf.org/html/draft-ietf-appsawg-json-merge-patch-02).
