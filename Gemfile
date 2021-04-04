@@ -5,4 +5,4 @@ gemspec
 
 gem 'simplecov', require: false
 gem 'simplecov-lcov', require: false
-gem 'coveralls_reborn', '~> 0.18.0', require: false
+gem 'coveralls_reborn', '~> 0.21.0', require: false
